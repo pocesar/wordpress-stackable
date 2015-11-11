@@ -89,6 +89,10 @@ if ( !defined('ABSPATH') )
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
 
+define('FORCE_SSL_ADMIN', true);
+define('WP_HOME', getenv('WP_HOME'));
+define('WP_SITEURL', getenv('WP_HOME'));
+
 /** change permisssions for plugin installation */
 define("FS_METHOD","direct");
 define("FS_CHMOD_DIR", 0777);
