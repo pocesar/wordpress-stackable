@@ -4,7 +4,8 @@ MAINTAINER Borja Burgos <borja@tutum.co>, Feng Honglin <hfeng@tutum.co>
 ENV WORDPRESS_VER 4.3.1
 ENV WP_PATH /app
 WORKDIR /
-RUN apt-get update && \
+RUN mkdir -p ${WP_PATH} && \ 
+    apt-get update && \
     apt-get -yq install mysql-client curl && \
     rm -rf ${WP_PATH} && \
     curl -0L http://wordpress.org/wordpress-${WORDPRESS_VER}.tar.gz | tar zxv && \
