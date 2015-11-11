@@ -6,7 +6,7 @@ ENV WP_PATH /app
 WORKDIR /
 RUN apt-get update && \
     apt-get -yq install mysql-client curl && \
-    rm -rf /app && \
+    rm -rf ${WP_PATH} && \
     curl -0L http://wordpress.org/wordpress-${WORDPRESS_VER}.tar.gz | tar zxv && \
     mv /wordpress ${WP_PATH} && \
     rm -rf /var/lib/apt/lists/*
