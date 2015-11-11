@@ -91,6 +91,10 @@ require_once(ABSPATH . 'wp-settings.php');
 
 define('FORCE_SSL_ADMIN', true);
 define('FORCE_SSL_LOGIN', true);
+if ($_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
+  $_SERVER['HTTPS']='on';
+}
+
 define('WP_HOME', getenv('WP_HOME'));
 define('WP_SITEURL', getenv('WP_HOME'));
 
