@@ -96,7 +96,7 @@ if ($_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
 }
 
 define('WP_HOME', getenv('WP_HOME'));
-define('WP_SITEURL', getenv('WP_HOME'));
+define('WP_SITEURL', getenv('WP_SITEURL'));
 
 /** change permisssions for plugin installation */
 define("FS_METHOD","direct");
